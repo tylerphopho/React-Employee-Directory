@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 
-export default class Table extends Component {
+export default class Add extends Component {
     componentDidMount(){
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.collapsible');
