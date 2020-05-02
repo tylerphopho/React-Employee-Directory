@@ -3,15 +3,15 @@ import axios from "axios";
 
 const Employee = props => (
     <tr>
-        <td>{props.employees.employees.firstName}</td>
-        <td>{props.employees.employees.lastName}</td>
-        <td>{props.employees.employees.email}</td>
-        <td>{props.employees.employees.position}</td>
+        <td>{props.employees.employee.firstName}</td>
+        <td>{props.employees.employee.lastName}</td>
+        <td>{props.employees.employee.email}</td>
+        <td>{props.employees.employee.position}</td>
         <td><a href="" onClick={() => {props.removeEmployee(props.employees._id)}}>Delete</a></td>
     </tr>
 )
 
-export default class EmployeeListe extends Component {
+export default class EmployeeList extends Component {
     constructor(){
         super();
         this.state = {
@@ -27,7 +27,7 @@ updateSearch(event){
     console.log(event.target.value)
 }
     componentDidMount(){
-        axios.get("https://tyler.phopho-employee-directory.herokuapp.com/api/employees/")
+        axios.get("https://tyler.phopho-employee-directory.herokuapp.com/api/employees")
         .then(res => {
             this.setState({employees: res.data})
         }).catch((error) => {
@@ -43,7 +43,7 @@ updateSearch(event){
     }
 
     employeeList(){
-        let filteredEmployee = this.state.employees.filter(
+            let filteredEmployee = this.state.employees.filter(
             (employee) => {
                 return employee.employee.firstName.toLowerCase().indexOf(this.state.search.toLowerCase() != -1)
                 || employee.employee.lastName.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
@@ -57,7 +57,31 @@ updateSearch(event){
     }
     render(){
         return (
-            
+            <div>
+                <div className="container">
+                    <br></br>
+                    <form className="col s12">
+                        <div className="col s12">
+                            <input placeholder="Search Filter" id="search" type="text" value={this.state.search} onChange={this.updateSearch.bind(this)}/>
+                            <label for="search">Search directory by first/last name, email, or position</label>
+                        </div>
+                    </form>
+                <table className="responsive-table centered">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Position</th>
+                        </tr>
+                        <tbody>
+                            {this.employeeList()}
+                            {console.log(this.employeeList())}
+                        </tbody>
+                    </thead>
+                </table>
+            </div>
+            </div>
         )
     }
 }

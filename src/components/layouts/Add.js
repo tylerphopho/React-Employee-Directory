@@ -59,7 +59,7 @@ export default class Add extends Component {
                         <div className="collapsible-body">
                             <span>
                                 <div className="row">
-                                <form className="col s12">
+                                <form className="col s12 form">
                                     
                                     <div className="input-field col s6">
                                     <input id="first_name" type="text" className="validate"/>
