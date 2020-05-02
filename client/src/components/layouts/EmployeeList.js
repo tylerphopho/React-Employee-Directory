@@ -7,7 +7,7 @@ const Employee = props => (
         <td>{props.employees.employee.lastName}</td>
         <td>{props.employees.employee.email}</td>
         <td>{props.employees.employee.position}</td>
-        <td><a href="" onClick={() => {props.removeEmployee(props.employees._id)}}>Delete</a></td>
+        <td><a href="#" onClick={() => {props.removeEmployee(props.employees._id)}}>Delete</a></td>
     </tr>
 )
 
