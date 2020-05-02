@@ -5,8 +5,8 @@ export class Navbar extends Component {
         return (
             <div>
                 <nav className="nav-wrapper grey darken-4">
-                    <div class="container">
-                    <div class="brand-logo center">Employee Directory</div>
+                    <div className="container">
+                    <div className="brand-logo center">Employee Directory</div>
                     </div>
                 </nav>
             </div>
