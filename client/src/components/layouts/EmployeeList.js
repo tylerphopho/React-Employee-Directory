@@ -27,7 +27,7 @@ updateSearch(event){
     console.log(event.target.value)
 }
     componentDidMount(){
-        axios.get("https://tyler.phopho-employee-directory.herokuapp.com/api/employees")
+        axios.get("https://tylerphopho-employee-directory.herokuapp.com/api/employees")
         .then(res => {
             this.setState({employees: res.data})
         }).catch((error) => {
