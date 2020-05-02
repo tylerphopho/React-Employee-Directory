@@ -18,7 +18,7 @@ if(process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-mongoose.connect(process.env.MONGODB_URI || "mongod://tylerphopho:Password1%21%0A@localhost20717/employee-directory",{
+mongoose.connect(process.env.MONGODB_URI || "mongodb://tylerphopho:password1@ds335678.mlab.com:35678/heroku_fqqm362w",{
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useFindAndModify: false

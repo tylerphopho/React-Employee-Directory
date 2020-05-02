@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const db = require("../models/Employee")
 
-mongoose.connect("mongodb://tyler.phopho:Password1%21%0A@cluster0-ucpsu.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect("mongodb://tylerphopho:password1@ds335678.mlab.com:35678/heroku_fqqm362w", {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
