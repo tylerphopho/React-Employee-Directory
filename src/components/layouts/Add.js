@@ -62,28 +62,28 @@ export default class Add extends Component {
                                 <form className="col s12 form">
                                     
                                     <div className="input-field col s6">
-                                    <input id="first_name" type="text" className="validate"/>
+                                    <input value={this.state.firstName} id="first_name" type="text" className="validate"/>
                                     <label for="first_name" >First Name</label>
                                     </div>
                                     
                                     <div className="input-field col s6">
-                                    <input id="last_name" type="text" className="validate"/>
+                                    <input value={this.state.lastName} id="last_name" type="text" className="validate"/>
                                     <label for="last_name" >Last Name</label>
                                     </div>
                                     
                                     <div className="row">
                                         <div className="input-field col s6">
-                                            <input id="email" type="email" className="validate"/>
+                                            <input value={this.state.email} id="email" type="email" className="validate"/>
                                             <label for="email">Email</label>
                                         </div>
                                         <div className="input-field col s6">
-                                            <input id="postion" type="text" className="validate"/>
+                                            <input value={this.state.position} id="postion" type="text" className="validate"/>
                                             <label for="position">Employee Positon</label>
                                         </div>
                                     </div>
                                 </form>
                                 </div>
-                                <button className="btn waves-effect waves-light" type="submit">Add</button>
+                                <button onClick={this.handleFormSubmit} className="btn waves-effect waves-light" type="submit">Add</button>
                             </span>
                         </div>
                     </li>
