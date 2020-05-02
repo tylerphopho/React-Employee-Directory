@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import EmployeeList from "./EmployeeList";
 import "materialize-css/dist/css/materialize.min.css";
 
 export default class Table extends Component {
@@ -13,6 +14,9 @@ export default class Table extends Component {
                             <th>Email</th>
                             <th>Position</th>
                         </tr>
+                        <tbody>
+                            <EmployeeList />
+                        </tbody>
                     </thead>
                 </table>
             </div>

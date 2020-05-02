@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
 import Navbar from "./components/layouts/Navbar";
 import Add from "./components/layouts/Add";
 import Table from "./components/layouts/Table";
+import EmployeeList from "./components/layouts/EmployeeList";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Navbar />
       <Add />
       <Table />
+      <EmployeeList />
     </div>
     
   );

@@ -1,8 +1,49 @@
 import React, {Component} from "react";
+import axios from "axios";  
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 
 export default class Add extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            employee: {
+                first_name: "",
+                last_name: "",
+                email: "",
+                position: "",
+            }
+        };
+    }
+    
+    handleInputeChage = event => {
+        let value = event.target.value;
+        const name = event.target.name;
+
+        this.setState({
+            [name]: value
+        });
+    };
+    handleFormSubmit = () => {
+        if(!this.state.firstName || !this.state.lastName){
+            alert("Please enter a first and last name.")
+        }else if (!this.state.email){
+            alert("Please enter an email address.")
+        }else if(!this.state.position){
+            alert("Please eneter a position.")
+        }else{
+            alert("Employee added!")
+        }
+        const employee = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            position: this.state.position
+        };
+        console.log(employee);
+        axios.post("http://tyler.phopho-employee-directory.herokuapp.com/api/employees", employee)
+        .then(res => console.log(res.data));
+    }
     componentDidMount(){
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.collapsible');
